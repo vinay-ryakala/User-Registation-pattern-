@@ -25,6 +25,7 @@ emailPattern="^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][
 phonePattern="^[0-9]{2}[[:space:]][0-9]{10}$"
 passwordPattern="^[A-Za-z0-9]{8,}$"
 uppercasePattern="^[a-z0-9]*[A-Z]+[a-z0-9]*$"
+numericPattern="^[a-zA-Z]*[0-9]+[a-zA-Z]*$"
 
 pattern $firstName $namePattern
 pattern $lastName $namePattern
@@ -33,7 +34,12 @@ pattern "$phone" $phonePattern
 
 if [[ $Password =~ $uppercasePattern ]]
 then
-	pattern $Password $passwordPattern
+	if [[ $Password =~ $numericPattern ]]
+	then
+		pattern $Password $passwordPattern
+	else
+		echo "give atleast one upper case"
+	fi
 else
-	echo "invalid input"
+	echo "give atleast one upper case input"
 fi
