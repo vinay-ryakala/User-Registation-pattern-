@@ -1,0 +1,70 @@
+ ./emailpattern.sh
++ read -p 'Enter email to validate the Pattern ' input
+Enter email to validate the Pattern abc@yahoo.com
++ emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$'
++ [[ abc@yahoo.com =~ ^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$ ]]
++ echo 'abc@yahoo.com valid email'
+abc@yahoo.com valid email
+
+vinay@DESKTOP-1TCPMKQ MINGW64 ~/CIC-batch225/day14patterns (emailcheckUC9)
+$ ./emailpattern.sh
++ read -p 'Enter email to validate the Pattern ' input
+Enter email to validate the Pattern abc-100@yahoo.com
++ emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$'
++ [[ abc-100@yahoo.com =~ ^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$ ]]
++ echo 'abc-100@yahoo.com valid email'
+abc-100@yahoo.com valid email
+
+vinay@DESKTOP-1TCPMKQ MINGW64 ~/CIC-batch225/day14patterns (emailcheckUC9)
+$ ./emailpattern.sh
++ read -p 'Enter email to validate the Pattern ' input
+Enter email to validate the Pattern abc+100@abc.com.au
++ emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$'
++ [[ abc+100@abc.com.au =~ ^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$ ]]
++ echo 'abc+100@abc.com.au valid email'
+abc+100@abc.com.au valid email
+
+$ ./emailpattern.sh
++ read -p 'Enter email to validate the Pattern ' input
+Enter email to validate the Pattern abc@1.com
++ emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$'
++ [[ abc@1.com =~ ^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$ ]]
++ echo 'abc@1.com valid email'
+abc@1.com valid email
+
+vinay@DESKTOP-1TCPMKQ MINGW64 ~/CIC-batch225/day14patterns (emailcheckUC9)
+$ ./emailpattern.sh
++ read -p 'Enter email to validate the Pattern ' input
+Enter email to validate the Pattern abc-
++ emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$'
++ [[ abc- =~ ^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$ ]]
++ echo 'abc- Invalid email'
+abc- Invalid email
+
+vinay@DESKTOP-1TCPMKQ MINGW64 ~/CIC-batch225/day14patterns (emailcheckUC9)
+$ ./emailpattern.sh
++ read -p 'Enter email to validate the Pattern ' input
+Enter email to validate the Pattern .bc2.com.my
++ emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$'
++ [[ . =~ ^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$ ]]
++ echo '. Invalid email'
+. Invalid email
+
+$ ./emailpattern.sh
+Enter email to validate the Pattern abc@gmail.com.aaa.ay
+abc@gmail.com.aaa.ay Invalid email
+
+vinay@DESKTOP-1TCPMKQ MINGW64 ~/CIC-batch225/day14patterns (emailcheckUC9)
+$ ./emailpattern.sh
+Enter email to validate the Pattern abc@gmail.com.1a
+abc@gmail.com.1a Invalid email
+
+vinay@DESKTOP-1TCPMKQ MINGW64 ~/CIC-batch225/day14patterns (emailcheckUC9)
+$ ./emailpattern.sh
+Enter email to validate the Pattern abc@abc@gmail.com
+abc@abc@gmail.com Invalid email
+
+vinay@DESKTOP-1TCPMKQ MINGW64 ~/CIC-batch225/day14patterns (emailcheckUC9)
+$ ./emailpattern.sh
+Enter email to validate the Pattern abc..202@gmail.com
+abc..202@gmail.com Invalid email
