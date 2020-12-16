@@ -24,16 +24,14 @@ namePattern="^[A-Z]{1}[A-Za-z]{2,}$"
 emailPattern="^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,4})*$"
 phonePattern="^[0-9]{2}[[:space:]][0-9]{10}$"
 passwordPattern="^[A-Za-z0-9]{8,}$"
+uppercasePattern="^[a-z0-9]*[A-Z]+[a-z0-9]*$"
 
 pattern $firstName $namePattern
 pattern $lastName $namePattern
 pattern $email $emailPattern
 pattern "$phone" $phonePattern
-pattern $Password $passwordPattern
 
-uppercasePattern="^[a-z0-9]*[A-Z]+[a-z0-9]*$"
-
-if [[ $firstName =~ $uppercasePattern ]]
+if [[ $Password =~ $uppercasePattern ]]
 then
 	pattern $Password $passwordPattern
 else
