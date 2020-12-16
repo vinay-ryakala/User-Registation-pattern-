@@ -42,5 +42,5 @@ then
 		echo "give atleast one number"
 	fi
 else
-	echo "give atleast one uppercase"		
+	echo "give atleast one uppercase"	
 fi
